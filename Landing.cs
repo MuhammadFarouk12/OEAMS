@@ -12,7 +12,7 @@ namespace OEAMS
 {
     public partial class Landing : Form
     {
-        public static string connectionString = "Server=sql12.freesqldatabase.com;Port=3306;Database=sql12793688;Uid=sql12793688;Pwd=myALH6KclI";
+        public static string connectionString = "Server=localhost;Database=OEAMS;User Id=root;Password=1234567890;SslMode=none;";
         public Landing()
         {
             InitializeComponent();
