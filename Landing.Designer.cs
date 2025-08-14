@@ -60,6 +60,7 @@
             this.btn_enterSystem.Size = new System.Drawing.Size(452, 45);
             this.btn_enterSystem.TabIndex = 1;
             this.btn_enterSystem.Text = "Enter The System";
+            this.btn_enterSystem.Click += new System.EventHandler(this.btn_enterSystem_Click);
             // 
             // txb_adminPassword
             // 

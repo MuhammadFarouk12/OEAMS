@@ -88,3 +88,4 @@ C:\Users\Muham\Source\Repos\OEAMS\obj\Debug\OEAMS.csproj.CoreCompileInputs.cache
 C:\Users\Muham\Source\Repos\OEAMS\obj\Debug\OEAMS.csproj.Up2Date
 C:\Users\Muham\Source\Repos\OEAMS\obj\Debug\OEAMS.exe
 C:\Users\Muham\Source\Repos\OEAMS\obj\Debug\OEAMS.pdb
+C:\Users\Muham\Source\Repos\OEAMS\obj\Debug\OEAMS.Students.resources
