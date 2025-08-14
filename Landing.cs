@@ -20,7 +20,7 @@ namespace OEAMS
 
         private void Landing_Load(object sender, EventArgs e)
         {
-            
+            this.BackColor = Helper.PrimaryColor; 
         }
     }
 }
