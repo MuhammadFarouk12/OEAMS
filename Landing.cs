@@ -21,9 +21,6 @@ namespace OEAMS
 
         private void Landing_Load(object sender, EventArgs e)
         {
-            Title.ForeColor = Helper.PrimaryColor;
-            btn_enterSystem.FillColor = Helper.PrimaryColor;
-            btn_enterSystem.FillColor2 = Helper.PurpleColor;
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
