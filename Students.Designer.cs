@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txb_studentFirstName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txb_studentLastName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txb_studentMiddleNames = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txb_phoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txb_studentPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.btn_addStudent = new Guna.UI2.WinForms.Guna2Button();
             this.btn_updateStudent = new Guna.UI2.WinForms.Guna2Button();
             this.btn_deleteStudent = new Guna.UI2.WinForms.Guna2Button();
@@ -101,24 +101,24 @@
             this.txb_studentMiddleNames.Size = new System.Drawing.Size(312, 34);
             this.txb_studentMiddleNames.TabIndex = 8;
             // 
-            // txb_phoneNumber
+            // txb_studentPhoneNumber
             // 
-            this.txb_phoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txb_phoneNumber.DefaultText = "";
-            this.txb_phoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txb_phoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txb_phoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_phoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txb_phoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_phoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txb_phoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txb_phoneNumber.Location = new System.Drawing.Point(342, 63);
-            this.txb_phoneNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txb_phoneNumber.Name = "txb_phoneNumber";
-            this.txb_phoneNumber.PlaceholderText = "Phone Number";
-            this.txb_phoneNumber.SelectedText = "";
-            this.txb_phoneNumber.Size = new System.Drawing.Size(278, 34);
-            this.txb_phoneNumber.TabIndex = 9;
+            this.txb_studentPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txb_studentPhoneNumber.DefaultText = "";
+            this.txb_studentPhoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txb_studentPhoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txb_studentPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_studentPhoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txb_studentPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txb_studentPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txb_studentPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txb_studentPhoneNumber.Location = new System.Drawing.Point(342, 63);
+            this.txb_studentPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txb_studentPhoneNumber.Name = "txb_studentPhoneNumber";
+            this.txb_studentPhoneNumber.PlaceholderText = "Phone Number";
+            this.txb_studentPhoneNumber.SelectedText = "";
+            this.txb_studentPhoneNumber.Size = new System.Drawing.Size(278, 34);
+            this.txb_studentPhoneNumber.TabIndex = 9;
             // 
             // btn_addStudent
             // 
@@ -135,6 +135,7 @@
             this.btn_addStudent.Size = new System.Drawing.Size(206, 45);
             this.btn_addStudent.TabIndex = 10;
             this.btn_addStudent.Text = "Add Student";
+            this.btn_addStudent.Click += new System.EventHandler(this.btn_addStudent_Click);
             // 
             // btn_updateStudent
             // 
@@ -170,25 +171,26 @@
             // dgv_students
             // 
             this.dgv_students.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_students.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_students.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_students.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_students.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgv_students.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_students.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_students.ColumnHeadersHeight = 4;
+            this.dgv_students.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_students.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_students.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_students.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_students.Location = new System.Drawing.Point(0, 176);
@@ -207,7 +209,7 @@
             this.dgv_students.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_students.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgv_students.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgv_students.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_students.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_students.ThemeStyle.HeaderStyle.Height = 4;
             this.dgv_students.ThemeStyle.ReadOnly = false;
             this.dgv_students.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -217,13 +219,14 @@
             this.dgv_students.ThemeStyle.RowsStyle.Height = 22;
             this.dgv_students.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_students.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_students.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_students_CellContentClick);
             // 
             // lbl_studentId
             // 
             this.lbl_studentId.BackColor = System.Drawing.Color.Transparent;
             this.lbl_studentId.Location = new System.Drawing.Point(627, 63);
             this.lbl_studentId.Name = "lbl_studentId";
-            this.lbl_studentId.Size = new System.Drawing.Size(21, 22);
+            this.lbl_studentId.Size = new System.Drawing.Size(15, 15);
             this.lbl_studentId.TabIndex = 15;
             this.lbl_studentId.Text = "Id: ";
             // 
@@ -237,7 +240,7 @@
             this.Controls.Add(this.btn_deleteStudent);
             this.Controls.Add(this.btn_updateStudent);
             this.Controls.Add(this.btn_addStudent);
-            this.Controls.Add(this.txb_phoneNumber);
+            this.Controls.Add(this.txb_studentPhoneNumber);
             this.Controls.Add(this.txb_studentMiddleNames);
             this.Controls.Add(this.txb_studentLastName);
             this.Controls.Add(this.txb_studentFirstName);
@@ -256,7 +259,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txb_studentFirstName;
         private Guna.UI2.WinForms.Guna2TextBox txb_studentLastName;
         private Guna.UI2.WinForms.Guna2TextBox txb_studentMiddleNames;
-        private Guna.UI2.WinForms.Guna2TextBox txb_phoneNumber;
+        private Guna.UI2.WinForms.Guna2TextBox txb_studentPhoneNumber;
         private Guna.UI2.WinForms.Guna2Button btn_addStudent;
         private Guna.UI2.WinForms.Guna2Button btn_updateStudent;
         private Guna.UI2.WinForms.Guna2Button btn_deleteStudent;

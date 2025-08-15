@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Muham\\source\\repos\\OEAMS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|c:\\users\\muham\\source\\repos\\oeams\\students.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|solutionrelative:students.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|c:\\users\\muham\\source\\repos\\oeams\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|solutionrelative:helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|c:\\users\\muham\\source\\repos\\oeams\\students.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|solutionrelative:students.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|c:\\users\\muham\\source\\repos\\oeams\\students.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|solutionrelative:students.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|c:\\users\\muham\\source\\repos\\oeams\\students.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|solutionrelative:students.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|c:\\users\\muham\\source\\repos\\oeams\\landing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DCD60CD6-562A-487A-B6B3-299AA379C07C}|OEAMS.csproj|solutionrelative:landing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,40 +42,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Students.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Muham\\Source\\Repos\\OEAMS\\Students.Designer.cs",
-              "RelativeDocumentMoniker": "Students.Designer.cs",
-              "ToolTip": "C:\\Users\\Muham\\Source\\Repos\\OEAMS\\Students.Designer.cs*",
-              "RelativeToolTip": "Students.Designer.cs*",
-              "ViewState": "AgIAAPEAAAAAAAAAAAAcwAkBAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Students.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Muham\\source\\repos\\OEAMS\\Students.cs",
+              "RelativeDocumentMoniker": "Students.cs",
+              "ToolTip": "C:\\Users\\Muham\\source\\repos\\OEAMS\\Students.cs [Design]",
+              "RelativeToolTip": "Students.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T06:41:02.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T11:34:25.601Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Students.cs",
-              "DocumentMoniker": "C:\\Users\\Muham\\Source\\Repos\\OEAMS\\Students.cs",
-              "RelativeDocumentMoniker": "Students.cs",
-              "ToolTip": "C:\\Users\\Muham\\Source\\Repos\\OEAMS\\Students.cs*",
-              "RelativeToolTip": "Students.cs*",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Helper.cs",
+              "DocumentMoniker": "C:\\Users\\Muham\\source\\repos\\OEAMS\\Helper.cs",
+              "RelativeDocumentMoniker": "Helper.cs",
+              "ToolTip": "C:\\Users\\Muham\\source\\repos\\OEAMS\\Helper.cs*",
+              "RelativeToolTip": "Helper.cs*",
+              "ViewState": "AgIAACUAAAAAAAAAAAAcwDMAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T06:34:09.552Z",
+              "WhenOpened": "2025-08-15T07:31:32.964Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Students.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Muham\\Source\\Repos\\OEAMS\\Students.cs",
+              "Title": "Students.cs",
+              "DocumentMoniker": "C:\\Users\\Muham\\source\\repos\\OEAMS\\Students.cs",
               "RelativeDocumentMoniker": "Students.cs",
-              "ToolTip": "C:\\Users\\Muham\\Source\\Repos\\OEAMS\\Students.cs [Design]*",
-              "RelativeToolTip": "Students.cs [Design]*",
+              "ToolTip": "C:\\Users\\Muham\\source\\repos\\OEAMS\\Students.cs",
+              "RelativeToolTip": "Students.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAEwCQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T06:34:04.287Z",
+              "WhenOpened": "2025-08-15T11:34:31.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Landing.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Muham\\source\\repos\\OEAMS\\Landing.cs",
+              "RelativeDocumentMoniker": "Landing.cs",
+              "ToolTip": "C:\\Users\\Muham\\source\\repos\\OEAMS\\Landing.cs [Design]",
+              "RelativeToolTip": "Landing.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T07:32:43.695Z",
               "EditorCaption": " [Design]"
             }
           ]
