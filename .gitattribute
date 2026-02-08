@@ -1,0 +1,29 @@
+# Enforce consistent line endings
+* text=auto eol=lf
+
+# PHP files (explicitly set to LF)
+*.php text eol=lf
+
+# HTML/CSS/JS files
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+
+# JSON, XML, SQL
+*.json text eol=lf
+*.xml text eol=lf
+*.sql text eol=lf
+
+# Protect binary files from being modified
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.zip binary
+*.rar binary

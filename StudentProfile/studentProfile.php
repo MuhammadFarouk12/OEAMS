@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSION['user_type'] !== 'student') {
+    header("Location: ../Login/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,30 +17,23 @@
     <?php include('../utilities/db.php'); ?>
 </head>
 <?php
-$id = 2;
+$id = $_SESSION['user_id'];
 $sql = $conn->prepare("SELECT 
-            s.STUDENT_ID,
-            s.FIRST_NAME,
-            s.MIDDLE_NAMES,
-            s.LAST_NAME,
-            s.PHONE_NUMBER,
-            s.REGISTER_DATE AS ENROLLMENT_DATE,
-            co.COURSE_NAME,
+            s.STUDENT_ID, s.FIRST_NAME, s.MIDDLE_NAMES, s.LAST_NAME, s.PHONE_NUMBER,
+            s.REGISTER_DATE AS ENROLLMENT_DATE, co.COURSE_NAME,
             CONCAT(t.TERM_START, ' - ', t.TERM_END) AS TERM,
-             r.FINAL_EXAM_MARK AS MARK
+            r.FINAL_EXAM_MARK AS MARK
         FROM STUDENT s
-        INNER JOIN REGISTRATION r ON s.STUDENT_ID = r.STUDENT_ID
-        INNER JOIN CLASS c ON r.CLASS_ID = c.CLASS_ID
-        INNER JOIN TERM t ON c.TERM_ID = t.TERM_ID
-        INNER JOIN COURSE co ON c.COURSE_ID = co.COURSE_ID
+        LEFT JOIN REGISTRATION r ON s.STUDENT_ID = r.STUDENT_ID
+        LEFT JOIN CLASS c ON r.CLASS_ID = c.CLASS_ID
+        LEFT JOIN TERM t ON c.TERM_ID = t.TERM_ID
+        LEFT JOIN COURSE co ON c.COURSE_ID = co.COURSE_ID
         WHERE s.STUDENT_ID = ?");
 $sql->bind_param("i", $id);
 $sql->execute();
 $student = $sql->get_result()->fetch_assoc();
 ?>
 <style>
-
-
     button.menu-btn {
         position: fixed;
         top: 30px;
@@ -193,7 +194,9 @@ $student = $sql->get_result()->fetch_assoc();
     <div class="sidebar-menu" id="sidebarMenu">
         <div class="menu-header">
             <div class="menu-title">Student Dashboard</div>
-            <div class="menu-subtitle"><?php echo $student["FIRST_NAME"] . " " . $student["LAST_NAME"]; ?> - <?php echo $student["STUDENT_ID"]; ?></div>
+            <?php echo htmlspecialchars($student["FIRST_NAME"] . " " . $student["LAST_NAME"]); ?>
+            -
+            <?php echo htmlspecialchars($student["STUDENT_ID"]); ?>
         </div>
         <div class="menu-items">
             <a href=studentProfile.php class="menu-item active">
@@ -230,7 +233,7 @@ $student = $sql->get_result()->fetch_assoc();
                 <div class="student-basic-info">
                     <div class="form-field" style="margin-bottom: 10px;">
                         <div class="field-label">Student Name</div>
-                        <div class="field-value"><?php echo  $student["FIRST_NAME"] . " " . $student["MIDDLE_NAMES"] . " " . $student["LAST_NAME"]; ?></div>
+                        <div class="field-value"><?php echo htmlspecialchars($student["FIRST_NAME"] . " " . $student["LAST_NAME"]); ?></div>
                     </div>
                     <div class="form-field">
                         <div class="field-label">Student ID</div>
@@ -268,6 +271,7 @@ $student = $sql->get_result()->fetch_assoc();
                     </div>
                 </div>
             </div>
+
 
             <div class="form-section">
                 <div class="section-title">Academic Records & Course Marks</div>

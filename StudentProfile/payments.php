@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -354,11 +357,25 @@
     </style>
 </head>
 <?php
-$id = 2;
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../Login/login.php");
+    exit();
+}
+
+$id = $_SESSION['user_id'];
 $sql = $conn->prepare("SELECT PRICE, PAID FROM REGISTRATION WHERE STUDENT_ID = ?");
 $sql->bind_param("i", $id);
 $sql->execute();
-$payment = $sql->get_result()->fetch_assoc();
+$result = $sql->get_result();
+
+if ($result->num_rows > 0) {
+    $payment = $result->fetch_assoc();
+} else {
+    $payment = [
+        'PRICE' => 0,
+        'PAID' => 0
+    ];
+}
 ?>
 
 <body>
