@@ -82,21 +82,21 @@
     <?php
      $term_id_filter = isset($_POST["term_id"]) ? (int)$_POST["term_id"]: 1;
      $sql_classes = $conn->prepare("
-     SELECT class_id
-    FROM `class`
-    WHERE term_id = ?");
+     SELECT CLASS_ID
+    FROM `CLASS`
+    WHERE TERM_ID = ?");
     $sql_classes->bind_param("i", $term_id_filter);
     $sql_classes->execute();
     $classes_res = $sql_classes->get_result();
 
      $class_id_filter = isset($_POST['class_id']) ? (array) $_POST ['class_id']: [];
      $ids_string = !empty($class_id_filter) ? implode(',', array_map('intval', $class_id_filter)) : "0";
-    $sql_top = $conn->prepare("SELECT student.first_name, (IFNULL(registration.participation_mark, 0) + IFNULL(registration.attendance_mark, 0)
-     + IFNULL(registration.mid_exam_mark, 0) + IFNULL(registration.homeworks_mark, 0) + IFNULL(registration.activites_mark, 0) 
-     + IFNULL(registration.final_exam_mark, 0)) AS total
-        FROM registration 
-        JOIN student ON registration.student_id = student.student_id
-        JOIN class ON registration.class_id = class.class_id WHERE class.term_id = ? AND class.class_id IN ($ids_string) 
+    $sql_top = $conn->prepare("SELECT STUDENT.FIRST_NAME, (IFNULL(REGISTRATION.PARTICIPATION_MARK, 0) + IFNULL(REGISTRATION.ATTENDANCE_MARK, 0)
+     + IFNULL(REGISTRATION.MID_EXAM_MARK, 0) + IFNULL(REGISTRATION.HOMEWORKS_MARK, 0) + IFNULL(REGISTRATION.ACTIVITES_MARK, 0) 
+     + IFNULL(REGISTRATION.FINAL_EXAM_MARK, 0)) AS total
+        FROM REGISTRATION 
+        JOIN STUDENT ON REGISTRATION.STUDENT_ID = STUDENT.STUDENT_ID
+        JOIN CLASS ON REGISTRATION.CLASS_ID = CLASS.CLASS_ID WHERE CLASS.TERM_ID = ? AND CLASS.CLASS_ID IN ($ids_string) 
         ORDER BY total DESC 
         LIMIT 5
     ");
@@ -115,25 +115,25 @@
     ?>
     <div style="width: 45%; margin: auto;">
          <form method="POST" action="">
-    <label>Term</label>
-    <input type="number" name="term_id"
+    <label class="d-block">Term</label>
+    <input class="form-control" type="number" name="term_id"
         value="<?php echo htmlspecialchars($term_id_filter); ?>">
 
-    <label>Class</label>
+    <label class="d-block mt-3">Class</label>
     <select name="class_id[]" id="class-select-list" class="form-select" multiple style="heght: 100px;">
     <?php if ($classes_res->num_rows == 0): ?>
         <option value="">No classes for this term</option>
     <?php else: ?>
         <?php while($c = $classes_res->fetch_assoc()): ?>
-             <?php $is_selected = (in_array($c['class_id'], $class_id_filter)) ? 'selected' : ''; ?>
-            <option value="<?php echo $c['class_id']; ?>" <?php echo $is_selected; ?>>
-                Class <?php echo $c['class_id']; ?>
+             <?php $is_selected = (in_array($c['CLASS_ID'], $class_id_filter)) ? 'selected' : ''; ?>
+            <option value="<?php echo $c['CLASS_ID']; ?>" <?php echo $is_selected; ?>>
+                Class <?php echo $c['CLASS_ID']; ?>
             </option>
         <?php endwhile; ?>
     <?php endif; ?>
 </select>
 
-    <button type="submit">Show Top Students</button>
+    <button class="btn btn-primary mt-2" type="submit">Show Top Students</button>
 </form>
     
         <h2>Top 5 Students Performing thes term <?php echo htmlspecialchars($term_id_filter);?></h2>
