@@ -14,6 +14,6 @@
 <body>
 	<?php include("../utilities/nav.php")?>
 	
-	<h1 class="text-center mt-5">WELCOME TO OEAMS ADMIN DASHBOARD</h1>
+	<h1 class="text-center mt-5">WELCOME TO Fluentia ADMIN DASHBOARD</h1>
 </body>
 </html>

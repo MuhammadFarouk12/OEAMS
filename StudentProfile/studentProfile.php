@@ -19,8 +19,14 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || $_SESSI
 <?php
 $id = $_SESSION['user_id'];
 $sql = $conn->prepare("SELECT 
-            s.STUDENT_ID, s.FIRST_NAME, s.MIDDLE_NAMES, s.LAST_NAME, s.PHONE_NUMBER,
-            s.REGISTER_DATE AS ENROLLMENT_DATE, co.COURSE_NAME,
+            s.STUDENT_ID,
+            s.FIRST_NAME,
+            s.MIDDLE_NAMES,
+            s.LAST_NAME,
+            s.profile_image,
+            s.PHONE_NUMBER,
+            s.REGISTER_DATE AS ENROLLMENT_DATE,
+            co.COURSE_NAME,
             CONCAT(t.TERM_START, ' - ', t.TERM_END) AS TERM,
             r.FINAL_EXAM_MARK AS MARK
         FROM STUDENT s
@@ -228,7 +234,7 @@ $student = $sql->get_result()->fetch_assoc();
         <div class="form-body">
             <div class="student-photo-section">
                 <div class="photo-box">
-                    <img src="" alt="Student Photo">
+                    <img src="<?php echo "../login/" . $student["profile_image"];?>" alt="Student Photo">
                 </div>
                 <div class="student-basic-info">
                     <div class="form-field" style="margin-bottom: 10px;">

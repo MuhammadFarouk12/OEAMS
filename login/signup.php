@@ -19,6 +19,7 @@ if (isset($_SESSION['success'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Fluentia International Institute</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <style>
         * {
             margin: 0;
@@ -360,7 +361,7 @@ if (isset($_SESSION['success'])) {
                 }
                 ?> 
 
-                <form action="signup_process.php" method="POST" id="signupForm">
+                <form action="signup_process.php" method="POST" id="signupForm" enctype="multipart/form-data">
                     <input type="hidden" name="user_type" id="userType" value="student">
 
                     <div class="form-row">
@@ -401,12 +402,16 @@ if (isset($_SESSION['success'])) {
                         </div>
                     </div>
 
+                    <label for="profile_image"></label>
+                    <input id="profile_image" class="form-control mb-3" type="file" name="profile_image" accept="image/*" required>
+
                     <div class="terms-agreement">
                         <input type="checkbox" name="terms" id="terms" required>
                         <label for="terms">
                             I agree to the <a href="terms.php" target="_blank">Terms and Conditions</a> and <a href="privacy.php" target="_blank">Privacy Policy</a>
                         </label>
                     </div>
+
 
                     <button type="submit" class="signup-btn">Create Account</button>
 
