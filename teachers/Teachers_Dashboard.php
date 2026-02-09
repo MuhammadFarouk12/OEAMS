@@ -1,11 +1,11 @@
 <?php
 include('../utilities/utilities.php');
-if (!isset($_SESSION['TEACHER_ID'])) {
+if (!isset($_SESSION['user_id'])) {
     die("Access denied");
 }
-$teacher_id=$_SESSION['TEACHER_ID'];
+$teacher_id=$_SESSION['user_id'];
 //بروفايل المعلم
-$stmt=$conn->prepare('SELECT FIRST_NAME,MIDDLE_NAMES,LAST_NAME,PHONE_NUMBER FROM teacher WHERE TEACHER_ID=?');
+$stmt=$conn->prepare('SELECT FIRST_NAME, MIDDLE_NAMES, LAST_NAME, PHONE_NUMBER FROM TEACHER WHERE TEACHER_ID=?');
 $stmt->bind_param("i",$teacher_id);
 $stmt->execute();
 
@@ -83,39 +83,38 @@ $classes = $stmt2->get_result();
 
 </section>
   <!--الاعدادات-->
-<button id="openSettingsMenu">Settings Menu</button>
+<button class="btn btn-primary" id="openSettingsMenu">Settings Menu</button>
 <div id="settingsMenu" style="display:none;">
-    <button id="btnAccount">Account Info</button><br>
-    <button id="btnPassword">Change Password</button><br>
-    <button id="logoutBtn">Logout</button>
+    <button class="btn btn-primary mt-3" id="btnAccount">Account Info</button><br>
+    <button class="btn btn-primary mt-3" id="btnPassword">Change Password</button><br>
 </div>
 <div id="accountSection" style="display:none;">
     <form id="accountForm"> <label>First Name:</label><br>
-        <input type="text" name="first_name" value="<?= $teacher['FIRST_NAME']; ?>"><br>
+        <input class="form-control" type="text" name="first_name" value="<?= $teacher['FIRST_NAME']; ?>"><br>
 
         <label>Middle Names:</label><br>
-        <input type="text" name="middle_names" value="<?= $teacher['MIDDLE_NAMES']; ?>"><br>
+        <input class="form-control"  type="text" name="middle_names" value="<?= $teacher['MIDDLE_NAMES']; ?>"><br>
 
         <label>Last Name:</label><br>
-        <input type="text" name="last_name" value="<?= $teacher['LAST_NAME']; ?>"><br>
+        <input class="form-control"  type="text" name="last_name" value="<?= $teacher['LAST_NAME']; ?>"><br>
 
         <label>Phone Number:</label><br>
-        <input type="text" name="phone_number" value="<?= $teacher['PHONE_NUMBER']; ?>"><br>
+        <input class="form-control"  type="text" name="phone_number" value="<?= $teacher['PHONE_NUMBER']; ?>"><br>
 
-        <button type="button" id="saveAccount">Save Account Info</button>
+        <button class="btn btn-primary"  type="button" id="saveAccount">Save Account Info</button>
     </form>
 </div>
 <div id="passwordSection" style="display:none;">
     <form id="passwordForm"> <label>Current Password:</label><br>
-        <input type="password" name="current_password"><br>
+        <input class="form-control"  type="password" name="current_password"><br>
 
         <label>New Password:</label><br>
-        <input type="password" name="new_password"><br>
+        <input class="form-control"  type="password" name="new_password"><br>
 
         <label>Confirm New Password:</label><br>
-        <input type="password" name="confirm_password"><br>
+        <input class="form-control"  type="password" name="confirm_password"><br>
 
-        <button type="button" id="changePassword">Change Password</button>
+        <button class="btn btn-primary"  type="button" id="changePassword">Change Password</button>
     </form>
 </div>
 <script>
@@ -130,9 +129,6 @@ document.getElementById('btnAccount').onclick = function() {
 document.getElementById('btnPassword').onclick = function() {
     document.getElementById('passwordSection').style.display = 'block';
     document.getElementById('accountSection').style.display = 'none'; // إخفاء قسم الحساب
-}
-document.getElementById('logoutBtn').onclick = function() {
-    window.location.href = "logout.php";
 }
 document.getElementById('saveAccount').onclick = function() {
     var form = document.getElementById('accountForm');

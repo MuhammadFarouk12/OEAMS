@@ -5,7 +5,6 @@
 body {
   background: #c8c2e8;
   padding: 20px;
-  color: #fdf0d5;
 }
 
 .pop-up-form {
@@ -90,4 +89,28 @@ table {
   to {
     top: 2%;
   }
+}
+
+nav {
+	background-color: #58037a;
+	padding: 10px;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+	margin: 0;
+}
+
+nav ul a{
+	/* border: 2px #5446a2 solid; */
+	/* padding: 5px 10px; */
+	color: #c8c2e8;
+	text-decoration: none;
+}
+
+nav ul li:hover a {
+	/* background-color: #58037a; */
+	color: white;
 }

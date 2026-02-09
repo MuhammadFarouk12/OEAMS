@@ -358,7 +358,7 @@ session_start();
 </head>
 <?php
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../Login/login.php");
+    header("Location: ../login/login.php");
     exit();
 }
 

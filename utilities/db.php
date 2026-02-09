@@ -1,1 +1,1 @@
-<?php $conn = mysqli_connect("localhost" ,"root","himo7723**", "OEAMS"); ?>
+<?php $conn = mysqli_connect("localhost" ,"root","", "OEAMS"); ?>

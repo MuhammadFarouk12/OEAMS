@@ -21,5 +21,5 @@ if (isset($_COOKIE['remember_token']) && isset($_COOKIE['user_id']) && isset($_C
 session_unset();
 session_destroy();
 
-header("Location: ../Login/login.php?message=logged_out");
+header("Location: ../login/login.php?message=logged_out");
 exit();

@@ -1,10 +1,10 @@
 <?php
 include('../utilities/utilities.php');
 	
-if (!isset($_SESSION['TEACHER_ID'])) {
+if (!isset($_SESSION['user_id'])) {
     die("Access denied");
 }
-$teacher_id=$_SESSION['TEACHER_ID'];
+$teacher_id=$_SESSION['user_id'];
 //بيانات مستدعاه عن طريق ajax
 $first_name = $_POST['first_name'];
 $middle_names = $_POST['middle_names'];

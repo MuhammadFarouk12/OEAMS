@@ -349,9 +349,7 @@ if (isset($_SESSION['success'])) {
                     echo '<div class="error-message">';
                     if ($_GET['error'] == 'passwords_dont_match') {
                         echo 'Passwords do not match!';
-                    } elseif ($_GET['error'] == 'email_exists') {
-                        echo 'This email is already registered!';
-                    } elseif ($_GET['error'] == 'phone_exists') {
+                    }  elseif ($_GET['error'] == 'phone_exists') {
                         echo 'This phone number is already registered!';
                     } elseif ($_GET['error'] == 'registration_failed') {
                         echo 'Registration failed. Please try again.';
@@ -382,28 +380,10 @@ if (isset($_SESSION['success'])) {
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Email Address <span class="required">*</span></label>
-                        <input type="email" name="email" class="form-input" placeholder="john.smith@email.com" required>
-                    </div>
-
-                    <div class="form-group">
                         <label class="form-label">Phone Number <span class="required">*</span></label>
                         <input type="tel" name="phone" class="form-input" placeholder="+1 (555) 123-4567" required>
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label">Date of Birth <span class="required">*</span></label>
-                        <input type="date" name="dob" class="form-input" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Gender <span class="required">*</span></label>
-                        <select name="gender" class="form-select" required>
-                            <option value="">Select Gender</option>
-                            <option value="M">Male</option>
-                            <option value="F">Female</option>
-                        </select>
-                    </div>
 
                     <div class="form-group">
                         <label class="form-label">Password <span class="required">*</span></label>

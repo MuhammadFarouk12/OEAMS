@@ -7,10 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $first_name = trim($_POST['first_name']);
     $middle_name = trim($_POST['middle_name']);
     $last_name = trim($_POST['last_name']);
-    $email = trim($_POST['email']);
     $phone = trim($_POST['phone']);
-    $dob = $_POST['dob'];
-    $gender = $_POST['gender'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
     $terms = isset($_POST['terms']);
@@ -34,15 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    $check_email = $conn->prepare("SELECT STUDENT_ID FROM STUDENT WHERE EMAIL = ?");
-    $check_email->bind_param("s", $email);
-    $check_email->execute();
-    if ($check_email->get_result()->num_rows > 0) {
-        $_SESSION['error'] = 'This email is already registered!';
-        header("Location: signup.php");
-        exit();
-    }
-
     $check_phone = $conn->prepare("SELECT STUDENT_ID FROM STUDENT WHERE PHONE_NUMBER = ?");
     $check_phone->bind_param("s", $phone);
     $check_phone->execute();
@@ -54,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = $conn->prepare("INSERT INTO STUDENT (FIRST_NAME, MIDDLE_NAMES, LAST_NAME, EMAIL, PHONE_NUMBER, DATE_OF_BIRTH, GENDER, PASSWORD, REGISTER_DATE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-    $sql->bind_param("ssssssss", $first_name, $middle_name, $last_name, $email, $phone, $dob, $gender, $hashed_password);
+    $sql = $conn->prepare("INSERT INTO STUDENT (FIRST_NAME, MIDDLE_NAMES, LAST_NAME, PHONE_NUMBER, PASSWORD, REGISTER_DATE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+    $sql->bind_param("sssss", $first_name, $middle_name, $last_name, $phone, $hashed_password);
 
     if ($sql->execute()) {
         $student_id = $conn->insert_id;

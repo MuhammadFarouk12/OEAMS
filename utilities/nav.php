@@ -9,6 +9,7 @@
 		<li><a href="http://localhost/php/OEAMS/registrations/registrations_marks.php">Registrations Marks</a></li>
 		<li><a href="http://localhost/php/OEAMS/registrations/registrations_fees.php">Registrations Fees</a></li>
 		<li><a href="http://localhost/php/OEAMS/registrations/add_registration.php">Add Registrations</a></li>
+		<li><a href="http://localhost/php/OEAMS/registrations/delete_registration.php">Delete Registrations</a></li>
 		<li><a href="http://localhost/php/OEAMS/stats/stats.php">Statistics</a></li>
 	</ul>
 </nav>
